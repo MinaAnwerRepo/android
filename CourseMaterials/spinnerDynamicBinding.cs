@@ -1,8 +1,10 @@
-//------------------------------------------------code-------------------------------------
+
+//----------------------------------------code-------------------------------------------------------------
 using Android.App;
 using Android.Widget;
 using Android.OS;
 using System;
+using System.Collections.Generic;
 
 namespace spinnerapp
 {
@@ -18,10 +20,14 @@ namespace spinnerapp
             Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
 
              spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
-
-            var adapter = ArrayAdapter.CreateFromResource(
-               this, Resource.Array.planets_array, Android.Resource.Layout.SimpleSpinnerItem);
-
+            #region binding from Resources 
+            //var adapter = ArrayAdapter.CreateFromResource(
+            //   this, Resource.Array.planets_array, Android.Resource.Layout.SimpleSpinnerItem);
+            #endregion
+                #region binding from Dynamic List
+                var items = new List<string>() { "one", "two", "three","Four","six","seven","Eight" };
+                var adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, items);
+            #endregion
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleListItemChecked);
             spinner.Adapter = adapter;
         }
@@ -29,13 +35,11 @@ namespace spinnerapp
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
-
             string toast = string.Format("The planet is {0}", spinner.GetItemAtPosition(e.Position));
             Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
     }
 }
-
 //-------------------------------------Designe-------------------------------------------------------------------------
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -71,3 +75,21 @@ namespace spinnerapp
         <item>Neptune</item>
     </string-array>
 </resources>
+
+
+
+
+
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
