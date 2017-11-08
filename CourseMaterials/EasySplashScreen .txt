@@ -21,7 +21,10 @@
 </RelativeLayout>
 
 4- create new activity called : TargetActivity --> its name so important 
-
+   note : 
+   change the theme in main activity and TargetActivity to be-->    Theme ="@style/Theme.AppCompat.Light.NoActionBar"
+   
+   
 using System;
 using System.Collections.Generic;
 using System.Linq;
