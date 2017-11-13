@@ -5,7 +5,7 @@ List2 = {"string1","string2","string3"}
 //---------------------------------------------------------------
 2- Class Used as a Collection of Objects
 
- public class MyObjCollection
+    public class MyObjCollection
     {
         object[] items = new object[50]; // limit items
         int numitems = 0;
