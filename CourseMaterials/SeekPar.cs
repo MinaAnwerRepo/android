@@ -22,6 +22,7 @@ namespace seekPar
             base.OnCreate(bundle);
              SetContentView (Resource.Layout.Main);
             t.Elapsed += new ElapsedEventHandler(t_Elapsed);
+			
              seekpar = FindViewById<SeekBar>(Resource.Id.seekBar1);
             Button btnstart = FindViewById<Button>(Resource.Id.btnStart);
             Button btnstop = FindViewById<Button>(Resource.Id.btnStop);
@@ -35,9 +36,6 @@ namespace seekPar
         {
             counter = e.Progress;
         }
-
-      
-
         private void Btnstop_Click(object sender, EventArgs e)
         {
             t.Stop();
